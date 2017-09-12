@@ -112,6 +112,9 @@ const handleImg = (pathInfo, argv, squid) => {
       quality: argv.q
     })
     stream.pipe(out)
+    stream.on('end', () => {
+      console.log('转换图片成功！')
+    });
   }
   img.src = squid;
 }
